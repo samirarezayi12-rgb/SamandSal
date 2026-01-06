@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2nd Anniversary, [His Name]! ❤️</title>
+    <style>
+        /* Basic styles: Pastel background, cute fonts */
+        body { background-color: #ffebee; font-family: Arial, sans-serif; text-align: center; color: #333; }
+        h1, h2 { color: #e57373; }
+        .section { padding: 20px; margin: 20px; border: 1px solid #f48fb1; border-radius: 10px; background: #fff; }
+
+        /* Cute animations! */
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-30px); } 60% { transform: translateY(-15px); } }
+        .bounce { animation: bounce 2s infinite; } /* Bouncy effect for buttons/hearts */
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .fade-in { animation: fadeIn 2s; } /* Fading for letters */
+
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .spin { animation: spin 3s infinite linear; } /* Spinning for map icons */
+
+        @keyframes wobble { 0% { transform: rotate(0deg); } 15% { transform: rotate(-5deg); } 30% { transform: rotate(5deg); } 45% { transform: rotate(-3deg); } 60% { transform: rotate(3deg); } 75% { transform: rotate(-1deg); } 90% { transform: rotate(1deg); } 100% { transform: rotate(0deg); } }
+        .wobble:hover { animation: wobble 0.5s; } /* Funny wobble on hover for laughs */
+
+        /* Confetti (simple JS will handle) */
+    </style>
+</head>
+<body>
+
+    <!-- Intro Section: Animated Greeting -->
+    <section class="section fade-in">
+        <h1 class="bounce">Happy 2nd Dating Anniversary, [His Name]! ❤️🥰</h1>
+        <p>Welcome to our cute love adventure! Scroll down for memories, laughs, and surprises. 😂</p>
+        <img src="https://via.placeholder.com/300x200?text=Us+Together" alt="Our Photo" class="wobble"> <!-- Replace with your photo URL -->
+    </section>
+
+    <!-- Timeline Section: Mix of romantic moments with animations -->
+    <section class="section">
+        <h2>Our Romantic Timeline ⏳</h2>
+        <ul>
+            <li class="fade-in">Date 1: [Memory, e.g., Coffee spill disaster turned fun] <span class="bounce">❤️</span></li>
+            <li class="fade-in">Month 6: [Memory, e.g., First trip to the beach] <img src="https://via.placeholder.com/100?text=Beach" class="spin" alt="Beach Icon"></li>
+            <li class="fade-in">Year 1: [Memory, e.g., That silly dance-off] <span class="wobble">😂</span></li>
+            <!-- Add more! -->
+        </ul>
+    </section>
+
+    <!-- Love Letters Section: Heartfelt with fades and wobbles -->
+    <section class="section">
+        <h2>Love Letters 💌</h2>
+        <p class="fade-in wobble">Reason #1: Your laugh makes my day! ❤️</p>
+        <p class="fade-in wobble">Reason #2: [Add your own, e.g., You're my favorite cuddle buddy] 🥰</p>
+        <!-- Add as many as you want -->
+    </section>
+
+    <!-- Adventure Map Section: Simple "map" with clickable spots and spins -->
+    <section class="section">
+        <h2>Our Cute Adventure Map 🗺️</h2>
+        <p>Click the icons for stories!</p>
+        <div>
+            <span class="spin" onclick="alert('[Story, e.g., Where we met: That park bench surprise!]')">🌳</span> <!-- Park -->
+            <span class="spin" style="margin-left: 50px;" onclick="alert('[Story, e.g., Favorite cafe: Endless talks]')">☕</span> <!-- Cafe -->
+            <!-- Add more spots with emojis/icons -->
+        </div>
+    </section>
+
+    <!-- Quiz/Game Section: Fun with bouncy buttons and confetti -->
+    <section class="section">
+        <h2>Quiz: How Well Do You Know Our Story? 🎉</h2>
+        <p>Question 1: What was our first date mishap?</p>
+        <button class="bounce" onclick="correctAnswer()">Coffee Spill</button>
+        <button class="bounce" onclick="wrongAnswer()">Perfect Day</button>
+        <!-- Add more questions/buttons -->
+    </section>
+
+    <!-- Ending Section: Future plans with floats -->
+    <section class="section fade-in">
+        <h2>Our Future Adventures 🚀</h2>
+        <p>[e.g., More trips, more laughs, forever you & me] ❤️</p>
+        <span class="bounce">The End... or just the beginning! 😘</span>
+    </section>
+
+    <script>
+        // Simple JS for quiz and confetti
+        function correctAnswer() {
+            alert("Yay! Correct! 🎉");
+            confetti(); // Trigger confetti
+        }
+        function wrongAnswer() {
+            alert("Oops! Try again. 😂");
+        }
+
+        // Funny confetti animation (basic canvas version)
+        function confetti() {
+            const canvas = document.createElement('canvas');
+            canvas.style.position = 'fixed'; canvas.style.top = '0'; canvas.style.left = '0';
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            document.body.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+            const colors = ['#f00', '#0f0', '#00f', '#ff0'];
+            for (let i = 0; i < 100; i++) {
+                ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+                ctx.fillRect(Math.random() * canvas.width, Math.random() * canvas.height, 10, 10);
+            }
+            setTimeout(() => canvas.remove(), 2000); // Remove after 2s
+        }
+    </script>
+
+</body>
+</html>
